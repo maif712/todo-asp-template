@@ -1,0 +1,203 @@
+/* Dashboard Styles */
+.dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-family: var(--poppin);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-todos-status {
+    font-family: var(--poppin);
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.section-todos-status span {
+    background-color: var(--secondary);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 var(--shadow);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 3px;
+}
+
+/* Table Styles */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    min-width: 600px;
+}
+
+.todo-table th,
+.todo-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.todo-table td[data-label="Date"] {
+    white-space: nowrap;
+}
+
+.todo-table th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    font-family: var(--poppin);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.todo-table tbody tr {
+    transition: all 0.3s ease;
+    color: var(--text);
+}
+
+.todo-table tbody tr:hover td {
+    color: white;
+}
+
+.todo-table tbody tr:nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
+.todo-table tbody tr:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.creation-form {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--card-shadow);
+    align-self: start;
+    position: sticky;
+    top: 0;
+    right: 0;
+}
+
+.todo-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text);
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--text);
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .todo-table th,
+    .todo-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .todo-table th {
+        display: none;
+    }
+    
+    .todo-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .todo-table td {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .todo-table td:last-child {
+        border-bottom: none;
+    }
+    
+    .todo-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--primary);
+    }
+    
+    .todo-table td .flex {
+        justify-content: flex-start;
+    }
+}

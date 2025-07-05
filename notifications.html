@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/notification.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <!-- Success Notification -->
+    <div class="notification-modal success">
+        <div class="notification-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="notification-content">
+            <h4>Success</h4>
+            <p>@TempData["SuccessMessage"]</p>
+        </div>
+    </div>
+
+    <!-- Error Notification -->
+    <div class="notification-modal error">
+        <div class="notification-icon">
+            <i class="fas fa-times-circle"></i>
+        </div>
+        <div class="notification-content">
+            <h4>Error</h4>
+            <p>@TempData["ErrorMessage"]</p>
+        </div>
+    </div>
+
+    <!-- Warning Notification -->
+    <div class="notification-modal warning">
+        <div class="notification-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="notification-content">
+            <h4>Warning</h4>
+            <p>@TempData["WarningMessage"]</p>
+        </div>
+    </div>
+
+    <!-- Neutral Notification -->
+    <div class="notification-modal neutral">
+        <div class="notification-icon">
+            <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="notification-content">
+            <h4>Info</h4>
+            <p>@TempData["InfoMessage"]</p>
+        </div>
+    </div>
+</body>
+
+</html>

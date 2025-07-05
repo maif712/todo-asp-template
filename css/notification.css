@@ -1,0 +1,147 @@
+/* Notification Modal Base Styles */
+.notification-modal {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-200%);
+    min-width: 320px;
+    max-width: 90%;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    animation: slideInOut 2s ease-in-out forwards;
+}
+
+/* Notification Types */
+.notification-modal.success {
+    background: var(--success);
+    border: 1px solid #86efac;
+}
+
+.notification-modal.error {
+    background: var(--error);
+    border: 1px solid #fecaca;
+}
+
+.notification-modal.warning {
+    background: var(--warning);
+    border: 1px solid #fcd34d;
+}
+
+.notification-modal.neutral {
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+/* Icon Styles */
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.notification-icon i {
+    font-size: 1.25rem;
+}
+
+/* Icon Colors */
+.success .notification-icon {
+    background: #dcfce7;
+    color: #22c55e;
+}
+
+.error .notification-icon {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.warning .notification-icon {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.neutral .notification-icon {
+    background: var(--bg);
+    color: #0ea5e9;
+}
+
+/* Content Styles */
+.notification-content {
+    flex: 1;
+}
+
+.notification-content h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+    font-family: var(--poppin);
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text);
+    line-height: 1.5;
+    font-family: var(--poppin);
+}
+
+/* Animation */
+@keyframes slideInOut {
+    0% {
+        transform: translateX(-50%) translateY(-200%);
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    85% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-200%);
+        opacity: 0;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .notification-modal {
+        min-width: calc(100% - 2rem);
+        margin: 0 1rem;
+    }
+}
+
+/* Add subtle scale effect on mobile */
+@media (hover: none) {
+    @keyframes slideInOut {
+        0% {
+            transform: translateX(-50%) translateY(-200%) scale(0.95);
+            opacity: 0;
+        }
+        15% {
+            transform: translateX(-50%) translateY(0) scale(1);
+            opacity: 1;
+        }
+        85% {
+            transform: translateX(-50%) translateY(0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(-50%) translateY(-200%) scale(0.95);
+            opacity: 0;
+        }
+    }
+}

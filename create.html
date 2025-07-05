@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/create.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="layout-wrapper flex justify-between gap-4">
+            <a href="#" class="header__logo">Todo App</a>
+            <div class="search-container">
+                <form class="search-form" action="/search" method="GET">
+                    <input type="text" name="q" class="search-input" placeholder="Search anything..."
+                        autocomplete="off">
+                    <button type="submit" class="search-button">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <span class="search-text">Search</span>
+                    </button>
+                </form>
+            </div>
+            <nav class="primay-nav" aria-expanded="false">
+                <button class="close-mobile-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <ul class="header__ul">
+                    <li class="header__li"><a href="#" class="header__a">Home</a></li>
+                    <li class="header__li"><a href="#" class="header__a">Todo Management</a></li>
+                    <li class="header__li"><a href="#" class="header__a">About Us</a></li>
+                </ul>
+            </nav>
+            <button class="ham-mobile-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <!-- Modern Create Todo Section -->
+    <section class="create-todo-section">
+        <div class="layout-wrapper">
+            <form class="create-todo-form">
+                <h2 class="create-todo-title">Create a New Todo</h2>
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        class="create-todo-input" 
+                        placeholder="Enter todo title..." 
+                        name="todo-title"
+                        required 
+                        autocomplete="off"
+                    >
+                </div>
+                <button type="submit" class="create-todo-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Todo</span>
+                </button>
+            </form>
+        </div>
+    </section>
+    <!-- End Create Todo Section -->
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
