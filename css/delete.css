@@ -1,0 +1,41 @@
+/* Delete Confirmation Styles */
+.delete-confirmation {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: var(--card);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.delete-confirmation h2, 
+.delete-confirmation p {
+    color: var(--text);
+    font-family: var(--poppin);
+}
+
+.confirmation-icon {
+  font-size: 3rem;
+  color: var(--warning);
+  margin-bottom: 1rem;
+}
+
+.confirmation-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.confirmation-buttons .btn {
+  padding: 0.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .confirmation-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
