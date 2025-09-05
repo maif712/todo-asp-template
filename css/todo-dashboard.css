@@ -95,7 +95,7 @@ body.dashboard-body {
 
 .main-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
     gap: 2rem;
     align-items: start;
     width: 100%;
@@ -189,12 +189,23 @@ body.dashboard-body {
     color: white;
 }
 
-.todo-table tbody tr.status-pending {
-    background-color: rgba(248, 150, 30, 0.1); /* Light orange tint */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 100vh; /* pill shape */
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.todo-table tbody tr.status-active {
-    background-color: rgba(72, 149, 239, 0.1); /* Light blue tint */
+.status-badge.status-active {
+    background-color: var(--success);
+    color: #111;
+}
+
+.status-badge.status-pending {
+    background-color: var(--warning);
+    color: #111;
 }
 
 .todo-table tbody tr:nth-child(even) {
@@ -205,6 +216,12 @@ body.dashboard-body {
     background-color: var(--primary-light);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-actions-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .todo-actions-form {
