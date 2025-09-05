@@ -98,6 +98,9 @@ body.dashboard-body {
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     align-items: start;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .section-title {
@@ -162,6 +165,12 @@ body.dashboard-body {
     white-space: nowrap;
 }
 
+.todo-table__id {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--text-secondary);
+}
+
 .todo-table th {
     background-color: var(--primary);
     color: white;
@@ -180,6 +189,14 @@ body.dashboard-body {
     color: white;
 }
 
+.todo-table tbody tr.status-pending {
+    background-color: rgba(248, 150, 30, 0.1); /* Light orange tint */
+}
+
+.todo-table tbody tr.status-active {
+    background-color: rgba(72, 149, 239, 0.1); /* Light blue tint */
+}
+
 .todo-table tbody tr:nth-child(even) {
     background-color: var(--bg-secondary);
 }
@@ -188,6 +205,37 @@ body.dashboard-body {
     background-color: var(--primary-light);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-actions-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-action {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-complete {
+    background-color: var(--success);
+    color: #111 !important;
+}
+
+.btn-pending {
+    background-color: var(--warning);
+    color: #111 !important;
 }
 
 /* Form Styles */
@@ -224,10 +272,42 @@ body.dashboard-body {
     transition: border-color 0.3s;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.custom-select-wrapper select:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.custom-select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+    font-family: inherit; /* Inherit font from body */
+}
+
+.custom-select-wrapper::after {
+    content: '▼';
+    font-size: 1rem;
+    color: var(--text-secondary);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 .btn-primary {
