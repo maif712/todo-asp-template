@@ -208,6 +208,11 @@ body.dashboard-body {
     color: #111;
 }
 
+.status-badge.status-completed {
+    background-color: var(--text-secondary);
+    color: var(--bg-secondary);
+}
+
 .todo-table tbody tr:nth-child(even) {
     background-color: var(--bg-secondary);
 }
@@ -216,6 +221,19 @@ body.dashboard-body {
     background-color: var(--primary-light);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+tr.status-completed {
+    opacity: 0.6;
+}
+
+tr.status-completed:hover {
+    opacity: 1;
+}
+
+tr.status-completed .todo-table__id,
+tr.status-completed td[data-label="Title"] {
+    text-decoration: line-through;
 }
 
 .todo-actions-container {
@@ -252,6 +270,11 @@ body.dashboard-body {
 
 .btn-pending {
     background-color: var(--warning);
+    color: #111 !important;
+}
+
+.btn-reopen {
+    background-color: var(--secondary-light);
     color: #111 !important;
 }
 
