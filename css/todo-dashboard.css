@@ -1,9 +1,91 @@
+/* Sidebar Styles */
+.sidebar {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;
+    top: 1.5rem;
+}
+
+.sidebar-nav__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.sidebar-nav__title:first-child {
+    margin-top: 0;
+}
+
+.sidebar-nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-nav__link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--primary);
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-nav__link:hover,
+.sidebar-nav__link.active {
+    background-color: var(--bg);
+    color: var(--primary);
+}
+
+.sidebar-nav__link:hover::before,
+.sidebar-nav__link.active::before {
+    transform: translateX(0);
+}
+
+.sidebar-nav__icon {
+    width: 20px;
+    height: 20px;
+}
+
 /* Dashboard Styles */
 .dashboard {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 250px 1fr; /* Changed for sidebar */
     gap: 2rem;
     padding: 2rem 0;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
 }
 
 .section-title {
@@ -157,7 +239,7 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .dashboard {
+    .main-content {
         grid-template-columns: 1fr;
     }
     
@@ -199,5 +281,14 @@
     
     .todo-table td .flex {
         justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1024px) {
+    .dashboard {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+    .sidebar {
+        position: static; /* Remove sticky positioning on mobile */
     }
 }
